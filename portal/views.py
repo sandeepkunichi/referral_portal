@@ -15,7 +15,6 @@ def index(request):
             referral = Referral(referral_name=form.cleaned_data['referral_name'],
                                 referral_email=form.cleaned_data['referral_email'],
                                 job_posting=form.cleaned_data['job_postings'])
-
             referral.save()
             return HttpResponseRedirect('/portal/')
     else:
