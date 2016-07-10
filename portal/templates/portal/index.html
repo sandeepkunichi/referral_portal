@@ -1,0 +1,6 @@
+<a href="/portal/logout">LOGOUT</a>
+<form action="/portal/" method="post">
+    {% csrf_token %}
+    {{ referral_form }}
+    <input type="submit" value="Submit" />
+</form>
