@@ -12,7 +12,11 @@ class JobPosting(models.Model):
 
 
 class Referral(models.Model):
+    STATUS = (
+        ('WAITING', 'WAITING'),
+        ('ACCEPTED', 'ACCEPTED')
+    )
     job_posting = models.ForeignKey(JobPosting, on_delete=models.CASCADE)
     referral_name = models.CharField(max_length=200)
     referral_email = models.EmailField()
-    status = models.CharField(max_length=10)
+    status = models.CharField(max_length=10, choices=STATUS, default='WAITING')
