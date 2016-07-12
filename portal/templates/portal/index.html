@@ -1,4 +1,17 @@
 <a href="/portal/logout">LOGOUT</a>
+
+{% if jobs_list %}
+<ul>
+    {% for job in jobs_list %}
+    <li>
+        <a href="/portal/{{ job.id }}/">{{ job.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No Job Postings are available.</p>
+{% endif %}
+
 <form action="/portal/" method="post">
     {% csrf_token %}
     {{ referral_form }}
